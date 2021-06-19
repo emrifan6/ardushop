@@ -3,6 +3,9 @@
  include "koneksi.php";
  include "menu.php";
  include "carosel.php";
+ if (empty($_SESSION['username'])) {
+  header('location:login.php');
+}
  
  $query = "SELECT * FROM barang";
  $result = mysqli_query($koneksi, $query);
@@ -13,6 +16,11 @@
  ?>
 
 <br />
+<?php if (!empty($_SESSION['pesan'])) : ?>
+    <div class="alert alert-success" role="alert">
+        <?= $_SESSION['pesan']; ?>
+    </div>
+<?php endif ?>
 <h5 class="ml-2">ITEM TERBARU</h5>
 <div class="kartu-produk">
   <div class="row">

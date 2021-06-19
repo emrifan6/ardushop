@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 18, 2021 at 08:28 AM
+-- Generation Time: Jun 19, 2021 at 06:55 PM
 -- Server version: 10.4.8-MariaDB-log
 -- PHP Version: 7.3.11
 
@@ -43,11 +43,11 @@ CREATE TABLE `barang` (
 
 INSERT INTO `barang` (`id`, `slug`, `judul`, `harga`, `gambar`, `stok`, `timestamp`) VALUES
 (1, 'esp01', 'ESP-01', 20000, 'esp01.jpg', 100, '2021-06-16 13:48:13'),
-(2, 'nodemcu', 'NodeMCU', 40000, 'nodemcu.jpg', 100, '2021-06-16 13:48:13'),
+(2, 'nodemcu', 'NodeMCU', 40000, 'nodemcu.jpg', 97, '2021-06-19 16:43:29'),
 (3, 'rtcds3231', 'RTC DS32331', 13000, 'rtcds3231.jpg', 100, '2021-06-16 14:22:11'),
 (4, 'activebuzzer', 'Aktif Buzzer', 2000, 'activebuzzer.jpg', 150, '2021-06-16 13:50:18'),
 (5, 'adaptor5v1a', 'Adaptor 5V 1A', 18000, 'adaptor5v1a.jpg', 100, '2021-06-16 13:52:17'),
-(6, 'femalesocket5mm', 'Female Socket 5mm', 1000, 'femalesocket5mm.jpg', 2000, '2021-06-16 13:52:17');
+(6, 'femalesocket5mm', 'Female Socket 5mm', 1000, 'femalesocket5mm.jpg', 1998, '2021-06-19 16:54:38');
 
 -- --------------------------------------------------------
 
@@ -72,6 +72,8 @@ CREATE TABLE `user` (
   `id` int(11) NOT NULL,
   `username` varchar(30) NOT NULL,
   `password` varchar(225) NOT NULL,
+  `no_hp` varchar(15) NOT NULL,
+  `alamat` text NOT NULL,
   `hakakses` varchar(30) NOT NULL,
   `timestamp` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -80,8 +82,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`id`, `username`, `password`, `hakakses`, `timestamp`) VALUES
-(1, 'rifan', 'rifan', 'pembeli', '2021-06-16 14:38:40');
+INSERT INTO `user` (`id`, `username`, `password`, `no_hp`, `alamat`, `hakakses`, `timestamp`) VALUES
+(1, 'rifan', 'rifan', '081225079410', 'JL. Gasem Wulung Raya rt04/rw04, Tlogosari Wetan, Pedurungan, Kota Semarang', 'pembeli', '2021-06-19 15:39:42');
 
 --
 -- Indexes for dumped tables
