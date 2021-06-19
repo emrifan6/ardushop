@@ -31,7 +31,7 @@ $user = mysqli_fetch_assoc($resultuser);
                 $querybayar = "UPDATE barang SET stok = stok - 1 WHERE slug =  " ."'".$slug."'";
                 $resultbayar = mysqli_query($koneksi, $querybayar);
                 $bayar = mysqli_fetch_assoc($resultbayar);
-                $_SESSION['pesan'] = "Pembelian 1 unit " . strtoupper($data['judul']) . " telah bersahil";
+                $_SESSION['pesan'] = "Pembelian 1 unit " . strtoupper($data['judul']) . " telah berhasil";
                 header('location:index.php');
                 }
             ?>
